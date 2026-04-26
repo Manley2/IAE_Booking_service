@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Booking extends Model
 {
     protected $fillable = [
-        'customer_name',
-        'customer_phone',
+        'customer_id',
         'room_id',
-        'check_in',
-        'check_out',
+        'checkin_date',
+        'checkout_date',
+        'total_price',
         'status',
-    ];
+            ];
 }

@@ -6,19 +6,19 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up(): void
-    {
-        Schema::create('bookings', function (Blueprint $table) {
-            $table->id();
-            $table->string('customer_name');
-            $table->string('customer_phone');
-            $table->unsignedBigInteger('room_id');
-            $table->date('check_in');
-            $table->date('check_out');
-            $table->enum('status', ['confirmed', 'cancelled'])->default('confirmed');
-            $table->timestamps();
-        });
-    }
+public function up(): void
+{
+    Schema::create('bookings', function (Blueprint $table) {
+        $table->id();
+        $table->unsignedBigInteger('customer_id');
+        $table->unsignedBigInteger('room_id');
+        $table->date('checkin_date');
+        $table->date('checkout_date');
+        $table->decimal('total_price', 12, 2);
+        $table->string('status')->default('confirmed');
+        $table->timestamps();
+    });
+}
 
     public function down(): void
     {
