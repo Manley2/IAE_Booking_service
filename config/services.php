@@ -35,4 +35,18 @@ return [
         ],
     ],
 
+    'customer_service' => [
+        'url' => env('CUSTOMER_SERVICE_URL', 'http://127.0.0.1:8002/api'),
+        'timeout' => (int) env('SERVICE_HTTP_TIMEOUT', 10),
+        'retries' => (int) env('SERVICE_HTTP_RETRIES', 1),
+        'retry_delay_ms' => (int) env('SERVICE_HTTP_RETRY_DELAY_MS', 200),
+    ],
+
+    'room_service' => [
+        'url' => env('ROOM_SERVICE_URL', 'http://127.0.0.1:8003/api'),
+        'timeout' => (int) env('SERVICE_HTTP_TIMEOUT', 10),
+        'retries' => (int) env('SERVICE_HTTP_RETRIES', 1),
+        'retry_delay_ms' => (int) env('SERVICE_HTTP_RETRY_DELAY_MS', 200),
+    ],
+
 ];
